@@ -5,6 +5,14 @@ from dataclasses import dataclass
 
 @dataclass
 class CardVacinas(db.Model):
+    cpf: str
+    name: str
+    first_shot_date: str
+    second_shot_date: str
+    vaccine_name: str
+    health_unit_name: str
+
+
     __tablename__ = "vaccine_cards"
     __table_args__ = (CheckConstraint("cpf ~ '[0-9]{11}'"),)
 
